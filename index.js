@@ -77,6 +77,16 @@ const questions = [
         message: 'Please enter the file path for your images:',
         when: (answers) => answers.toc_addimages // Only ask this if the previous answer is true
     },
+    {
+        type: 'list',
+    name: 'license',
+    message: 'Please choose from one of the following licenses:',
+    choices: [
+        'MIT License',
+        'Apache License 2.0',
+        'GNU GPLv3',
+        'Creative Commons Zero v1.0 Universal'
+    ]},
 ]
 
 // TODO: Create a function to write README file
