@@ -78,32 +78,35 @@ const questions = [
         when: (answers) => answers.toc_addimages // Only ask this if the previous answer is true
     },
 ]
-inquirer
-  .prompt(questions)
-  .then((answers) => {
-    let mdString = "Here is your markdown.\n"
-   
-        mdString = mdString+"name: " + answers.name  + ".\n"
-        mdString = mdString+"github_profile: " + answers.github_profile  + ".\n"
-        console.log('mdString',mdString)
-
-
-  })
-  .catch((error) => {
-    if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
-    }
-  });
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+        if (err) {
+            console.error('Error writing to file:', err);
+            return;
+        }
+        console.log('Successfully wrote to', fileName);
+    });
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then((answers) => {
+        const markdownContent = generateMarkdown(answers);
+        writeToFile('README.md', markdownContent);
+    }).catch((error) => {
+        if (error.isTtyError) {
+            console.error("Prompt couldn't be rendered in the current environment");
+        } else {
+            console.error('Error:', error);
+        }
+    });
+}
+
 
 // Function call to initialize app
 init();
+
 
 
