@@ -1,5 +1,5 @@
 
-# ReadME Generator
+# ReadMe Generator Video
 
 # <h3>Description<h3>
 
@@ -27,19 +27,18 @@ Learned how to use multiple node js files to create modular projects.
 
 # <h4>Landing Page<h4>
 
-![Image of Application](./images/Screenshot%202024-05-02%20at%209.43.41%20PM.pngimages/)
+![Image of Application](./images/Screenshot%202024-05-02%20at%209.43.41%20PM.jpg)
 
 - Interactive CLI: An intuitive command-line interface that guides users through the README creation process by asking a series of questions.
-- Dynamic Badge Generation: Automatically adds relevant badges (e.
-- g.
-- , for licenses) to the README based on the selections made during the setup.
+- Dynamic Badge Generation: Automatically adds relevant badges to the README based on the selections made during the setup.
 - Support for Images: Allows users to insert links to images, which are displayed within the README to illustrate the project.
 
 
 # <h3>Credits<h3>
 
-Created by Michael Young
-https://github.com/NikoMayz
+- Created by Michael Young
+- https://github.com/NikoMayz
+- [Video Link](https://bootcampspot.instructuremedia.com/embed/ce4ff693-6255-46c6-a6ff-0678d2fead15Links) 
 
 # <h3>License<h3>
 
