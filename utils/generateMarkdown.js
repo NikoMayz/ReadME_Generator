@@ -39,45 +39,46 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   const licenseBadge = renderLicenseBadge(data.license);
   const licenseSection = renderLicenseSection(data.license);
+  const featureItems = data.toc_features.split('.').filter(feature => feature.trim() !== '').map(feature => `- ${feature.trim()}.`);
 
   return `
 # ${data.project_title}
 
 # <h3>Description<h3>
 
-${data.description}
+${data.description_motivation}
+${data.description_problemsolved}
+${data.description_lessons}
 
 # <h3>Table of Contents<h3>
 
-Installation
-Usage
-Credits
-License
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
 # <h3>Installation
 
-To run this project locally, follow these steps:
-
-Clone the repository to your local machine using the following command:
-
-bash
-
-git clone ${data.repository_URL}
-
-Navigate to the project directory.
-Open the index.html file in your preferred web browser.
+1. Clone the repository to your local machine using the following command:
+   \`\`\`bash
+   git clone ${data.repository_URL}
+   \`\`\`
+2. Navigate to the project directory.
+3. Open the index.js file in your preferred code editor.
 
 # <h3>Usage<h3>
 
 # <h4>Landing Page<h4>
 
-${data.toc_features}
-
 ${data.imagePath ? `![Image of Application](${data.imagePath})` : 'No images available'}
+
+${featureItems.join('\n')}
+
 
 # <h3>Credits<h3>
 
-Created by ${data.name} ${data.github_profile}
+Created by ${data.name}
+${data.github_profile}
 
 # <h3>License<h3>
 
